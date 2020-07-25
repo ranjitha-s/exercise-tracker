@@ -9,4 +9,4 @@ ReactDOM.render(
   document.getElementById('root')
 );
 
-
+console.log('Environment is', process.env.NODE_ENV);
