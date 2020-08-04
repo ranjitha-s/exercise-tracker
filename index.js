@@ -14,11 +14,8 @@ mongoose.connect(keys.mongoURI || process.env.MONGO_URI, {
   useCreateIndex: true,
 });
 
-const exercisesRouter = require("./routes/exercises");
-const usersRouter = require("./routes/users");
-
-app.use("/exercises", exercisesRouter);
-app.use("/users", usersRouter);
+app.use("/exercises", require("./routes/exercises"));
+app.use("/users", require("./routes/users"));
 
 if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
