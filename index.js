@@ -20,8 +20,8 @@ mongoose
   .catch((err) => console.log(err));
 
 app.use("/exercises", require("./routes/exercises"));
-app.use("/users", require("./routes/users"));
 
+app.use("/users", require("./routes/users"));
 if (process.env.NODE_ENV === "production") {
   app.use(express.static(path.join("client/build")));
 
